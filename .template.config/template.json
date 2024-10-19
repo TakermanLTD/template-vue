@@ -1,0 +1,124 @@
+{ 
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Takerman",
+  "classifications": [
+    "Web API",
+    "Vue 3"
+  ],
+  "identity": "Takerman.Template",
+  "name": "Takerman Template Vue 3",
+  "shortName": "takerman-vue",
+  "description": "ASP.NET core Web API and Vue 3 poject",
+  "defaultName": "Template",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "primaryOutputs": [
+    {
+      "path": "Takerrman.Template.sln"
+    }
+  ],
+  "symbols": {
+    "auth": {
+      "displayName": "Auth",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include authentication feature?"
+    },
+    "config": {
+      "displayName": "Config",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include configuration feature?"
+    },
+    "database": {
+      "displayName": "Database",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include database feature?"
+    },
+    "xunit": {
+      "displayName": "xUnit",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include xunit test feature?"
+    },
+    "nunit": {
+      "displayName": "NUnit",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include nunit test feature?"
+    },
+    "cypress": {
+      "displayName": "Cypress",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include end-to-end with cypress feature?"
+    },
+    "jest": {
+      "displayName": "Jest",
+      "type": "parameter",
+      "defaultValue": "false",
+      "datatype": "bool",
+      "description": "Include front-end with jest feature?"
+    }
+  },
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        "./Takerman.Template.Tests",
+        "./Takerman.Template.Data",
+        "./takerman.template.client/archive",
+        "./takerman.template.client/cypress",
+        "./takerman.template.client/.env",
+        "./takerman.template.client/cypress.config.js",
+        "./Takerman.Template.Models/Configuration",
+        "./Takerman.Template.Models/DTOs"
+      ]
+    },
+    {
+      "source": "./",
+      "target": "./",
+      "include": [
+        "./Takerman.Template.Tests"
+      ],
+      "condition": "(xunit)"
+    },
+    {
+      "source": "./",
+      "target": "./",
+      "include": [
+        "./Takerman.Template.Data"
+      ],
+      "condition": "(database)"
+    },
+    {
+      "source": "./",
+      "target": "./",
+      "include": [
+        "./takerman.template.client/archive",
+        "./takerman.template.client/cypress",
+        "./takerman.template.client/.env",
+        "./takerman.template.client/cypress.config.js"
+      ],
+      "condition": "(cypress)"
+    },
+    {
+      "source": "./",
+      "target": "./",
+      "include": [
+        "./Takerman.Template.Models/Configuration"
+      ],
+      "condition": "(config)"
+    }
+  ]
+}

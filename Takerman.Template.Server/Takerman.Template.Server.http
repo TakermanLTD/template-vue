@@ -1,0 +1,6 @@
+@Takerman.Template.Server_HostAddress = http://localhost:5085
+
+GET {{Takerman.Template.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
