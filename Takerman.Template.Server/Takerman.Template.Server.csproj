@@ -20,6 +20,8 @@
     <ProjectReference Include="..\takerman.template.client\takerman.template.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\Takerman.Template.Common\Takerman.Template.Common.csproj" />
+    <ProjectReference Include="..\Takerman.Template.Services\Takerman.Template.Services.csproj" />
   </ItemGroup>
 
 </Project>
