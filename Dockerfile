@@ -18,7 +18,7 @@ ARG NUGET_PASSWORD
 
 COPY . .
 
-COPY ["takerman.dating.client/package.json", "package.json"]
+COPY ["takerman.template.client/package.json", "package.json"]
 RUN sed -i "s|</configuration>|<packageSourceCredentials><github><add key=\"Username\" value=\"takerman\"/><add key=\"ClearTextPassword\" value=\"${NUGET_PASSWORD}\"/></github></packageSourceCredentials></configuration>|" nuget.config
 RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github
 RUN echo //npm.pkg.github.com/:_authToken=$NUGET_PASSWORD >> ~/.npmrc
