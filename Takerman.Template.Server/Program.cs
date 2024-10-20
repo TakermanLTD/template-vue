@@ -1,5 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+using Takerman.Logging;
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Host.AddTakermanLogging();
+builder.Logging.AddTakermanLogging();
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
